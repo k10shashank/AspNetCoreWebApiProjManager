@@ -17,13 +17,7 @@ namespace AspNetCoreWebApiProjManager.Controller
         public ActionResult Login([FromBody] UserPassModel item)
         {
             _userService.Login(item.EMAIL, item.PASSWORD);
-            return NoContent();
-        }
-
-        [HttpGet]
-        public ActionResult Blank()
-        {
-            return Ok();
+            return Ok(_userService.Get(item.EMAIL));
         }
     }
 }

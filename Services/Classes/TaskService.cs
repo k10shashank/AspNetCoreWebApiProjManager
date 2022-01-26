@@ -35,9 +35,10 @@ namespace AspNetCoreWebApiProjManager.Services.Classes
         public IEnumerable<TaskModel> Get()
         {
             IEnumerable<TaskModel> tasks = _taskRepo.Get();
+            IList<TaskModel> taskList = new List<TaskModel>();
             foreach (TaskModel task in tasks)
-                UpdateTask(task);
-            return tasks;
+                taskList.Add(UpdateTask(task));
+            return taskList;
         }
 
         public TaskModel Get(int taskId)
