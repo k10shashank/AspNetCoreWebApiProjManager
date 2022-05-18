@@ -6,7 +6,7 @@ namespace AspNetCoreWebApiProjManager.Repository.Classes
 {
     public class UserPassRepository : IUserPassRepository
     {
-        private readonly DbProjManagerContext db = new DbProjManagerContext();
+        private readonly DbProjManagerContext db = new();
 
         public bool Exists(string email)
         {

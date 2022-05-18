@@ -28,27 +28,16 @@ namespace AspNetCoreWebApiProjManager.Attributes
                     break;
             }
 
-            ErrorModel error = new ErrorModel(errorCode, errorMessage);
+            ErrorModel error = new(errorCode, errorMessage);
 
-            switch (errorCode)
+            context.Result = errorCode switch
             {
-                case HttpStatusCode.BadRequest:
-                    context.Result = new BadRequestObjectResult(error);
-                    break;
-                case HttpStatusCode.Unauthorized:
-                    context.Result = new UnauthorizedObjectResult(error);
-                    break;
-                case HttpStatusCode.NotFound:
-                    context.Result = new NotFoundObjectResult(error);
-                    break;
-                case HttpStatusCode.Conflict:
-                    context.Result = new ConflictObjectResult(error);
-                    break;
-                default:
-                    context.Result = new BadRequestObjectResult(error);
-                    break;
-            }
-
+                HttpStatusCode.BadRequest => new BadRequestObjectResult(error),
+                HttpStatusCode.Unauthorized => new UnauthorizedObjectResult(error),
+                HttpStatusCode.NotFound => new NotFoundObjectResult(error),
+                HttpStatusCode.Conflict => new ConflictObjectResult(error),
+                _ => new BadRequestObjectResult(error),
+            };
             base.OnException(context);
         }
     }

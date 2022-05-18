@@ -8,7 +8,7 @@ namespace AspNetCoreWebApiProjManager.Repository.Classes
 {
     public class TaskRepository : ITaskRepository
     {
-        private readonly DbProjManagerContext db = new DbProjManagerContext();
+        private readonly DbProjManagerContext db = new();
 
         public void Add(TaskModel task)
         {

@@ -24,10 +24,7 @@ namespace AspNetCoreWebApiProjManager.Shared
             ObjectCache cache = MemoryCache.Default;
             CacheItem item = cache.GetCacheItem(key);
 
-            if (item is null)
-                return null;
-            else
-                return item.Value;
+            return item?.Value;
         }
     }
 }
