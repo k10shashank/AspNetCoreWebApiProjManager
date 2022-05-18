@@ -27,13 +27,13 @@ namespace AspNetCoreWebApiProjManager.Entities
 
         [NotNullCheck]
         public int ID_USER { get; set; }
-        
+
         [NotNullCheck]
         public string EMAIL { get; set; }
-        
+
         [NotNullCheck]
         public string FIRST_NAME { get; set; }
-        
+
         [NotNullCheck]
         public string LAST_NAME { get; set; }
     }

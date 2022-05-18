@@ -12,7 +12,7 @@ namespace AspNetCoreWebApiProjManager.Repository.Classes
         {
             return db.TblUserpasses.Any(x => x.Email == email);
         }
-        
+
         public bool Exists(string email, string password)
         {
             return db.TblUserpasses.Any(x => x.Email == email && x.Password == password);

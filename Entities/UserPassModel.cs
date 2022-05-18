@@ -19,10 +19,10 @@ namespace AspNetCoreWebApiProjManager.Entities
                 Password = PASSWORD
             };
         }
-        
+
         [NotNullCheck]
         public string EMAIL { get; set; }
-        
+
         [NotNullCheck]
         public string PASSWORD { get; set; }
     }

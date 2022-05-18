@@ -28,13 +28,13 @@ namespace AspNetCoreWebApiProjManager.Entities
 
         [NotNullCheck]
         public int ID_PROJECT { get; set; }
-        
+
         [NotNullCheck]
         public string NAME { get; set; }
-        
+
         [NotNullCheck]
         public string DETAILS { get; set; }
-        
+
         [NotNullCheck]
         public DateTime CREATED_ON { get; set; }
     }

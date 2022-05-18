@@ -32,10 +32,10 @@ namespace AspNetCoreWebApiProjManager.Entities
 
         [NotNullCheck]
         public int ID_TASK { get; set; }
-        
+
         [NotNullCheck]
         public string DETAILS { get; set; }
-        
+
         [NotNullCheck]
         public DateTime CREATED_ON { get; set; }
 
@@ -50,7 +50,7 @@ namespace AspNetCoreWebApiProjManager.Entities
         public int ID_USER { get; set; }
 
         public ProjectModel PROJECT { get; set; }
-        
+
         public UserModel USER { get; set; }
     }
 }
