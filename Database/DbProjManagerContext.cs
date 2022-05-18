@@ -1,19 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
-#nullable disable
+using System.Configuration;
 
 namespace AspNetCoreWebApiProjManager.Database
 {
     public partial class DbProjManagerContext : DbContext
     {
-        public DbProjManagerContext()
-        {
-        }
+        public DbProjManagerContext() { }
 
-        public DbProjManagerContext(DbContextOptions<DbProjManagerContext> options)
-            : base(options)
-        {
-        }
+        public DbProjManagerContext(DbContextOptions<DbProjManagerContext> options) : base(options) { }
 
         public virtual DbSet<TblProject> TblProjects { get; set; }
         public virtual DbSet<TblTask> TblTasks { get; set; }
@@ -24,8 +18,7 @@ namespace AspNetCoreWebApiProjManager.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=SHASH-ACER;Initial Catalog=DB_PROJMANAGER;Integrated Security=True");
+                optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["ProjManagerDbConnection"].ConnectionString);
             }
         }
 

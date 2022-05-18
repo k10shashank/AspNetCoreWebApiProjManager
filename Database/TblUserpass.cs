@@ -1,6 +1,4 @@
-﻿#nullable disable
-
-namespace AspNetCoreWebApiProjManager.Database
+﻿namespace AspNetCoreWebApiProjManager.Database
 {
     public partial class TblUserpass
     {

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-#nullable disable
-
 namespace AspNetCoreWebApiProjManager.Database
 {
     public partial class TblProject

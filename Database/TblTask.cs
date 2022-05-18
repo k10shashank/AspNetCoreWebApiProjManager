@@ -1,7 +1,5 @@
 ﻿using System;
 
-#nullable disable
-
 namespace AspNetCoreWebApiProjManager.Database
 {
     public partial class TblTask
