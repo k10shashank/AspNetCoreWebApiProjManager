@@ -14,7 +14,7 @@ namespace AspNetCoreWebApiProjManager.Attributes
         }
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            string errorMessage = $"Invalid {validationContext.DisplayName.GetDisplayName()} Value - {value}";
+            string errorMessage = $"Invalid {validationContext.DisplayName.GetFileColumnName()} Value - {value}";
             return !ValidValues.Contains(value)
                 ? throw new AppException(errorMessage, HttpStatusCode.BadRequest)
                 : new ValidationResult(ErrorMessage);
